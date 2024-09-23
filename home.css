@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 80px;
+  background: rgb(10, 22, 40);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.imglogo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.textlogo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.nav a:hover {
+  color: rgb(170, 215, 255);
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background: rgb(170, 215, 255);
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.nav a:hover::after {
+  transform: scaleX(0.6);
+}
+
+/* .nav .btnlogin {
+  width: 130px;
+  height: 50px;
+  font-size: 1.1em;
+  outline: none;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  margin-left: 40px;
+  font-weight: 500;
+}
+
+.btnlogin:hover {
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+} */
+
+body {
+  display: flex;
+  position: relative;
+  height: 250vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(255, 255, 255) 50%,
+      rgb(156, 183, 255) 100%
+    ),
+    url(sekolah.jpg);
+  background-position: top;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.content {
+  position: absolute;
+  padding-top: 120px;
+}
+
+.welcome {
+  text-align: left;
+  margin-top: 120px;
+  margin-left: 80px;
+  font-size: 3em;
+  color: #040421;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.textcontent {
+  text-align: center;
+  font-size: 1.2em;
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: 210px;
+
+  opacity: 0; /* Mulai dengan opasitas 0 */
+  transform: translateY(30px); /* Sedikit geser ke bawah */
+  transition: opacity 1s ease, transform 2s ease;
+}
+
+.textcontent.visible {
+  opacity: 1; /* Opasitas 1 saat terlihat */
+  transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+.quote {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 250px;
+  margin-bottom: 200px;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.quote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote::after {
+  content: ""; /*properti agar pseudo element berjalan*/
+  width: 500px;
+  height: 150px;
+  background: #fff262;
+  position: absolute;
+  bottom: -30px;
+  right: 260px;
+  z-index: -1;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px #131313;
+
+  color: transparent;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 3s ease, transform 3s;
+}
+
+.quote.visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}

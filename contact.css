@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 80px;
+  background: rgb(10, 22, 40);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.imglogo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.textlogo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.nav a:hover {
+  color: rgb(170, 215, 255);
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background: rgb(170, 215, 255);
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.nav a:hover::after {
+  transform: scaleX(0.6);
+}
+
+.content {
+  position: absolute;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(20px);
+  margin: 200px 170px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #000;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  display: flex;
+  position: relative;
+  height: 120vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 20, 39, 0.648) 0%,
+    rgb(11, 12, 17) 100%
+  );
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+hr {
+  height: 2px;
+  background-color: rgb(29, 29, 29);
+}
+
+.jalan {
+  margin-top: 10px;
+}
+
+.email {
+  margin-top: 10px;
+}
+
+.phone {
+  margin-top: 10px;
+}
+
+iframe {
+  width: 410px;
+  height: 230px;
+  position: absolute;
+  margin: 200px 670px;
+  border-radius: 10px;
+}
